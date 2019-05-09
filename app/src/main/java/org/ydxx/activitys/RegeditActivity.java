@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -25,7 +26,8 @@ public class RegeditActivity extends BaseActivity {
 
     private static EditText txt_username, txt_password, txt_email, txt_age;
     private static RadioButton rdo_man;
-    private static Button btn_regedit, btn_return;
+    private static Button btn_regedit;
+    private ImageView btn_return;
     private static RadioGroup rg_sex_group;
 
     private ProgressDialog progressDialog = null;
@@ -48,7 +50,7 @@ public class RegeditActivity extends BaseActivity {
         rdo_man = (RadioButton) this.findViewById(R.id.rb_man);
 
         btn_regedit = (Button) this.findViewById(R.id.btn_regedit);
-        btn_return = (Button) findViewById(R.id.btn_users_return);
+        btn_return = (ImageView) findViewById(R.id.btn_users_return);
 
         btn_return.setOnClickListener(new OnClickListener() {
             @Override

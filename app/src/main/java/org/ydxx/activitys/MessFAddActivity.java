@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import org.ydxx.R;
@@ -19,7 +20,8 @@ import org.ydxx.entity.Mess;
 import org.ydxx.entity.ResultMessage;
 
 public class MessFAddActivity extends BaseActivity {
-    private Button btn_mess_fadd_return, btn_mess_fadd_save;
+    private Button  btn_mess_fadd_save;
+    private ImageView btn_mess_fadd_return;
 
     private EditText et_mess_fadd_fmess;
     private ProgressDialog progressDialog = null;
@@ -54,7 +56,7 @@ public class MessFAddActivity extends BaseActivity {
                 }
             }
         }
-        btn_mess_fadd_return = (Button) findViewById(R.id.btn_mess_fadd_return);
+        btn_mess_fadd_return = (ImageView) findViewById(R.id.btn_mess_fadd_return);
         btn_mess_fadd_return.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -108,6 +110,7 @@ public class MessFAddActivity extends BaseActivity {
             }
         });
 
+
         handler = new Handler() {
             public void handleMessage(Message msg) {
                 if (progressDialog.isShowing()) {
@@ -136,6 +139,19 @@ public class MessFAddActivity extends BaseActivity {
                 }
             }
         };
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (declare.getUser().getType().equals("3")) {
+            Intent intent = new Intent(MessFAddActivity.this, MainActivity.class);
+            startActivity(intent);
+            MessFAddActivity.this.finish();
+        } else {
+            Intent intent = new Intent(MessFAddActivity.this, JxzyActivity.class);
+            startActivity(intent);
+            MessFAddActivity.this.finish();
+        }
     }
 
     @Override

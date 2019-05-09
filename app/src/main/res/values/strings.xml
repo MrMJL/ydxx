@@ -3,7 +3,7 @@
   <string name="app_name">移动学习平台</string>
 
   <string name="lbl_return">返回</string>
-  <string name="lbl_user_regedit">用户注册</string>
+  <string name="lbl_user_regedit">注册</string>
   <string name="lbl_username">用户名</string>
   <string name="lbl_password">密码</string>
   <string name="lbl_Confirmation_password">确认密码</string>

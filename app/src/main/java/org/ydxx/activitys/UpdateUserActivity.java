@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -25,7 +26,8 @@ public class UpdateUserActivity extends BaseActivity {
     private static EditText et_update_user_name, et_update_password, et_update_age, et_update_email;
     private static RadioButton rb_update_man;
     private static RadioButton rb_update_women;
-    private static Button btn_update, btn_update_users_return;
+    private static Button btn_update;
+    private static ImageView btn_update_users_return;
     private static RadioGroup rg_update_sex_group;
 
     private ProgressDialog progressDialog = null;
@@ -49,7 +51,7 @@ public class UpdateUserActivity extends BaseActivity {
         rb_update_women = (RadioButton) this.findViewById(R.id.rb_update_women);
 
         btn_update = (Button) this.findViewById(R.id.btn_update);
-        btn_update_users_return = (Button) findViewById(R.id.btn_update_users_return);
+        btn_update_users_return = (ImageView) findViewById(R.id.btn_update_users_return);
 
         btn_update_users_return.setOnClickListener(new OnClickListener() {
             @Override
@@ -147,6 +149,14 @@ public class UpdateUserActivity extends BaseActivity {
 
             new Thread(new UpdateUserRunable(user)).start();
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(UpdateUserActivity.this, MainActivity.class);
+        //UpdateUserActivity.this.setResult(RESULT_CANCELED, intent);
+        startActivity(intent);
+        UpdateUserActivity.this.finish();
     }
 
     class UpdateUserRunable implements Runnable {

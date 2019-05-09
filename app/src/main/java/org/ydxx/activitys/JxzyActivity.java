@@ -13,6 +13,7 @@ import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 import java.util.ArrayList;
@@ -28,7 +29,8 @@ import org.ydxx.entity.Xsdy;
 public class JxzyActivity extends BaseActivity {
     private static final String[] operationTypes = new String[] { "订阅" };
     private static final String[] operationTypes2 = new String[] { "修改", "删除" };
-    private Button btn_jxzy_return, btn_jxzy_add;
+    private ImageView  btn_jxzy_add;
+    private ImageView  btn_jxzy_return;
     private JxzyItemAdapter jxzyItemAdapter;
     private ListView lv_jxzy;
 
@@ -42,8 +44,8 @@ public class JxzyActivity extends BaseActivity {
         setContentView(R.layout.activity_jxzy);
         declare = (Declare) this.getApplicationContext();
 
-        btn_jxzy_return = (Button) findViewById(R.id.btn_jxzy_return);
-        btn_jxzy_add = (Button) findViewById(R.id.btn_jxzy_add);
+        btn_jxzy_return = (ImageView) findViewById(R.id.btn_jxzy_return);
+        btn_jxzy_add = (ImageView) findViewById(R.id.btn_jxzy_add);
         btn_jxzy_return.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -200,6 +202,14 @@ public class JxzyActivity extends BaseActivity {
             message.obj = resultMessage;
             handler.sendMessage(message);
         }
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(JxzyActivity.this, MainActivity.class);
+        startActivity(intent);
+        JxzyActivity.this.finish();
     }
 
     class deleteJxzyRunable implements Runnable {

@@ -44,7 +44,7 @@
       android:allowBackup="true"
       android:icon="@drawable/ic_launcher"
       android:label="@string/app_name"
-      android:theme="@style/MyAppBaseTheme">
+      android:theme="@style/CustomStyle">
     <activity android:name=".activitys.LoginActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>

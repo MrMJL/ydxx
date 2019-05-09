@@ -4,23 +4,22 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:layout_gravity="top"
-    android:background="@drawable/background"
     android:orientation="vertical" >
 
     <RelativeLayout
         android:id="@+id/LinearLayout12"
         android:layout_width="fill_parent"
         android:layout_height="45dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginRight="1dp"
         android1:layout_marginBottom="2dp"
-        android1:background="@drawable/background_div" >
+        android1:background="@color/blue_1" >
 
-        <Button
+        <ImageView
             android1:id="@+id/btn_mess_fadd_return"
             android1:layout_width="wrap_content"
-            android1:layout_height="wrap_content"
-            android1:text="@string/lbl_return" />
+            android:src="@mipmap/icon_back"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="18dp"
+            android1:layout_height="wrap_content" />
 
         <TextView
             android1:id="@+id/tv_mess_fadd_title"
@@ -29,6 +28,7 @@
             android1:layout_centerHorizontal="true"
             android1:layout_centerVertical="true"
             android1:text="我的留言"
+            android:textColor="@color/white"
             android1:textAppearance="?android:attr/textAppearanceLarge" />
 
     </RelativeLayout>
@@ -36,25 +36,40 @@
     <LinearLayout
         android1:layout_width="match_parent"
         android1:layout_height="match_parent"
-        android1:background="@drawable/background_div"
+        android:layout_margin="30dp"
         android1:orientation="vertical" >
 
-        <EditText
-            android1:id="@+id/et_mess_fadd_fmess"
-            android1:layout_width="match_parent"
-            android1:layout_height="wrap_content"
-            android1:ems="10"
-            android1:hint="留言内容"
-            android1:inputType="textMultiLine" >
+
+            <EditText
+                android:id="@+id/et_mess_fadd_fmess"
+                android:layout_width="match_parent"
+                android:background="@drawable/back_blue_bottom_line"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:drawablePadding="13dp"
+                android:paddingBottom="12dp"
+                android1:ems="10"
+                android1:hint="留言内容"
+                android:paddingLeft="10dp"
+                android:paddingTop="12dp"
+                android:paddingRight="10dp"
+                android:inputType="textMultiLine"
+                android:textSize="18sp" >
 
             <requestFocus />
         </EditText>
+
 
         <Button
             android1:id="@+id/btn_mess_fadd_save"
             android1:layout_width="match_parent"
             android1:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/btn_bac_login_selector"
+            android1:layout_marginRight="10dp"
             android1:text="保存" />
+
 
     </LinearLayout>
 

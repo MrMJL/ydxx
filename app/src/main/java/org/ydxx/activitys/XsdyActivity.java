@@ -13,6 +13,7 @@ import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 import java.util.ArrayList;
@@ -26,7 +27,7 @@ import org.ydxx.entity.Xsdy;
 
 public class XsdyActivity extends BaseActivity {
     private static final String[] operationTypes = new String[] { "下载", "退订" };
-    private Button btn_xsdy_return;
+    private ImageView btn_xsdy_return;
     private XsdyItemAdapter xsdyItemAdapter;
     private ListView lv_xsdy;
 
@@ -40,7 +41,7 @@ public class XsdyActivity extends BaseActivity {
         setContentView(R.layout.activity_xsdy);
         declare = (Declare) this.getApplicationContext();
 
-        btn_xsdy_return = (Button) findViewById(R.id.btn_xsdy_return);
+        btn_xsdy_return = (ImageView) findViewById(R.id.btn_xsdy_return);
         btn_xsdy_return.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -127,6 +128,14 @@ public class XsdyActivity extends BaseActivity {
             builder.show();
             return false;
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+//        super.onBackPressed();
+        Intent intent = new Intent(XsdyActivity.this, MainActivity.class);
+        startActivity(intent);
+        XsdyActivity.this.finish();
     }
 
     @Override

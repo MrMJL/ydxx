@@ -3,29 +3,29 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:layout_gravity="top"
-    android:background="@drawable/background"
     android:orientation="vertical" >
 
     <RelativeLayout
         android:id="@+id/LinearLayout12"
         android:layout_width="fill_parent"
         android:layout_height="45dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginRight="1dp"
         android1:layout_marginBottom="2dp"
-        android1:background="@drawable/background_div" >
+        android1:background="@color/blue_1" >
 
-        <Button
+        <ImageView
             android1:id="@+id/btn_update_users_return"
             android1:layout_width="wrap_content"
             android1:layout_height="wrap_content"
-            android1:text="@string/lbl_return" />
+            android:src="@mipmap/icon_back"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="18dp" />
 
         <TextView
             android1:id="@+id/tv_item_my_recipe_updatetime"
             android1:layout_width="wrap_content"
             android1:layout_height="wrap_content"
             android1:layout_centerHorizontal="true"
+            android:textColor="@color/white"
             android1:layout_centerVertical="true"
             android1:text="用户信息修改"
             android1:textAppearance="?android:attr/textAppearanceLarge" />
@@ -33,7 +33,10 @@
 
     <ScrollView
         android1:layout_width="match_parent"
-        android1:layout_height="wrap_content" >
+        android1:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:scrollbars="none"
+        android:layout_marginRight="30dp">
 
         <LinearLayout
             android:layout_width="fill_parent"
@@ -41,7 +44,7 @@
             android:layout_gravity="top"
             android1:layout_marginLeft="2dp"
             android1:layout_marginRight="2dp"
-            android1:layout_marginTop="0dp"
+            android1:layout_marginTop="30dp"
             android:background="@drawable/background_div"
             android:orientation="vertical" >
 
@@ -50,15 +53,29 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
                 android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginRight="10dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="用户名："
+                    android:textSize="18sp"
+                    android:layout_gravity="center_vertical"/>
 
                 <EditText
                     android:id="@+id/et_update_user_name"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/back_blue_bottom_line"
                     android:layout_height="wrap_content"
-                    android:ems="60"
+                    android:layout_centerHorizontal="true"
+                    android:drawablePadding="13dp"
+                    android:paddingBottom="12dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="12dp"
                     android:inputType="text"
-                    android1:hint="用户名" />
+                    android:textSize="18sp" />
+
 
             </LinearLayout>
 
@@ -68,14 +85,28 @@
                 android:layout_marginBottom="15dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="密    码："
+                    android:textSize="18sp"
+                    android:layout_gravity="center_vertical"/>
 
                 <EditText
                     android:id="@+id/et_update_password"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="60"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/back_blue_bottom_line"
+                    android:drawablePadding="13dp"
+                    android:hint=""
                     android:inputType="textPassword"
-                    android1:hint="密码" />
+                    android:paddingBottom="12dp"
+                    android:paddingLeft="10dp"
+                    android:ems="60"
+                    android:paddingTop="12dp"
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
@@ -86,16 +117,60 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp" >
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="年    龄："
+                    android:textSize="18sp"
+                    android:layout_gravity="center_vertical"/>
+
                 <EditText
                     android:id="@+id/et_update_age"
-                    android:layout_width="0dp"
-                    android:layout_height="fill_parent"
-                    android1:layout_weight="0.52"
-                    android:ems="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/back_blue_bottom_line"
+                    android:drawablePadding="13dp"
+                    android:hint=""
                     android:inputType="number"
-                    android1:hint="年龄" />
+                    android:paddingBottom="12dp"
+                    android:paddingLeft="10dp"
+                    android:ems="2"
+                    android:paddingTop="12dp"
+                    android:textSize="18sp" />
 
                 
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="邮    箱："
+                    android:textSize="18sp"
+                    android:layout_gravity="center_vertical"/>
+
+                <EditText
+                    android:id="@+id/et_update_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/back_blue_bottom_line"
+                    android:drawablePadding="13dp"
+                    android:hint=""
+                    android:inputType="textEmailAddress"
+                    android:paddingBottom="12dp"
+                    android:paddingLeft="10dp"
+                    android:ems="60"
+                    android:paddingTop="12dp"
+                    android:textSize="18sp" />
+
             </LinearLayout>
 
 			<LinearLayout
@@ -129,37 +204,27 @@
 
                 </RadioGroup>
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp" >
 
-                <EditText
-                    android:id="@+id/et_update_email"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ems="60"
-                    android:inputType="textEmailAddress"
-                    android1:hint="电子邮件" />
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
                 android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginRight="10dp"
                 android1:gravity="center_vertical|right" >
+
 
                 <Button
                     android1:id="@+id/btn_update"
                     android1:layout_width="match_parent"
                     android1:layout_height="wrap_content"
                     android1:layout_gravity="right"
-                    android1:layout_marginRight="10dp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/btn_bac_login_selector"
                     android1:text="更新" />
+
             </LinearLayout>
 
         </LinearLayout>

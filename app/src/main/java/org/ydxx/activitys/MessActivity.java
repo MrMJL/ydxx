@@ -12,6 +12,7 @@ import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ import org.ydxx.entity.ResultMessage;
 
 public class MessActivity extends BaseActivity {
     private static final String[] operationTypes = new String[] { "回复" };
-    private Button btn_mess_return, btn_mess_add;
+    private ImageView btn_mess_return, btn_mess_add;
     private MessItemAdapter messItemAdapter;
     private ListView lv_mess;
 
@@ -39,7 +40,7 @@ public class MessActivity extends BaseActivity {
         setContentView(R.layout.activity_mess);
         declare = (Declare) this.getApplicationContext();
 
-        btn_mess_return = (Button) findViewById(R.id.btn_mess_return);
+        btn_mess_return = (ImageView) findViewById(R.id.btn_mess_return);
         btn_mess_return.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,7 +50,7 @@ public class MessActivity extends BaseActivity {
             }
         });
 
-        btn_mess_add = (Button) findViewById(R.id.btn_mess_add);
+        btn_mess_add = (ImageView) findViewById(R.id.btn_mess_add);
         btn_mess_add.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -117,6 +118,13 @@ public class MessActivity extends BaseActivity {
             builder.show();
             return false;
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(MessActivity.this, MainActivity.class);
+        startActivity(intent);
+        MessActivity.this.finish();
     }
 
     @Override
