@@ -1,0 +1,6 @@
+/build
+/bugly
+/.idea
+*.apk
+*.zip
+*.iml

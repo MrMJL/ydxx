@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">移动学习平台</string>
+
+  <string name="lbl_return">返回</string>
+  <string name="lbl_user_regedit">用户注册</string>
+  <string name="lbl_username">用户名</string>
+  <string name="lbl_password">密码</string>
+  <string name="lbl_Confirmation_password">确认密码</string>
+  <string name="lbl_height">身高</string>
+  <string name="lbl_weight">体重</string>
+  <string name="lbl_sex">性别</string>
+  <string name="lbl_man">男</string>
+  <string name="lbl_woman">女</string>
+  <string name="lbl_age">年龄</string>
+  <string name="lbl_email">电子邮件</string>
+  <string name="btn_login">登录</string>
+  <string name="btn_regedit">注册</string>
+  <string name="lbl_login_register_link">没有帐号？ <a href="#" mce_href="#">注册</a></string>
+  <string name="lbl_select">选择</string>
+  <string name="lbl_submit">提交</string>
+  <string name="cm">cm</string>
+  <string name="x_x_com">x@x.com</string>
+  <string name="lbl_find">搜一搜</string>
+  <string name="lbl_location">地址</string>
+  <string name="scan_text">将二维码放入框内, 即可自动扫描</string>
+  <string name="lbl_find_teacher_map">地图定位</string>
+
+  <string name="mylocation">定位</string>
+
+  <string name="rdjd">热点景点</string>
+
+  <string name="lbl_guahao_title">挂号管理</string>
+
+  <string name="btn_guahao">挂号</string>
+
+  <string name="_">请选择科室</string>
+
+  <string name="lbl_bingli_title">我的病例</string>
+
+  <string name="lbl_add">添加</string>
+
+  <string name="tv_jtgj_title">交工工具信息</string>
+
+
+</resources>

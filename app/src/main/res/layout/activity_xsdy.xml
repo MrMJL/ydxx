@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android1="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="top"
+    android:background="@drawable/background"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/LinearLayout12"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginRight="1dp"
+        android1:layout_marginBottom="2dp"
+        android1:background="@drawable/background_div" >
+
+        <Button
+            android1:id="@+id/btn_xsdy_return"
+            android1:layout_width="wrap_content"
+            android1:layout_height="wrap_content"
+            android1:text="@string/lbl_return" />
+
+        <TextView
+            android1:id="@+id/tv_xsdy_title"
+            android1:layout_width="wrap_content"
+            android1:layout_height="wrap_content"
+            android1:layout_centerHorizontal="true"
+            android1:layout_centerVertical="true"
+            android1:text="我的学习资料"
+            android1:textAppearance="?android:attr/textAppearanceLarge" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android1:layout_width="match_parent"
+        android1:layout_height="match_parent"
+        android1:background="@drawable/background_div"
+        android1:orientation="vertical" >
+
+        <ListView
+            android1:id="@+id/lv_xsdy"
+            android1:layout_width="match_parent"
+            android1:layout_height="wrap_content" >
+        </ListView>
+
+    </LinearLayout>
+
+</LinearLayout>
