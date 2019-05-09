@@ -1,5 +1,6 @@
 package org.ydxx.activitys;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -25,6 +26,9 @@ import org.ydxx.entity.Declare;
 import org.ydxx.entity.ResultMessage;
 import org.ydxx.entity.Xsdy;
 
+/**
+ * 我的课程（学生）
+ */
 public class XsdyActivity extends BaseActivity {
     private static final String[] operationTypes = new String[] { "下载", "退订" };
     private ImageView btn_xsdy_return;
@@ -35,7 +39,7 @@ public class XsdyActivity extends BaseActivity {
     private Handler handler;
     private Declare declare;
 
-    @Override
+    @SuppressLint("HandlerLeak") @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_xsdy);
@@ -107,6 +111,7 @@ public class XsdyActivity extends BaseActivity {
 
                     switch (which) {
                         case 0:
+                            //下载使用系统浏览器请求Url
                             Intent intent = new Intent();
                             intent.setAction("android.intent.action.VIEW");
                             Uri content_url = Uri.parse(xsdy.getExt1());

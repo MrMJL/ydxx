@@ -18,6 +18,9 @@ import org.ydxx.entity.Declare;
 import org.ydxx.entity.Jxzy;
 import org.ydxx.entity.Mess;
 
+/**
+ * 主页面
+ */
 public class MainActivity extends BaseActivity {
 	private ArrayList<HashMap<String, Object>> meumList = new ArrayList<HashMap<String, Object>>();
 	private Declare declare;

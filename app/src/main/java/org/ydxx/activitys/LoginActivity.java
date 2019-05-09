@@ -67,6 +67,7 @@ public class LoginActivity extends BaseActivity {
         };
     }
 
+    //注册完成后，会回调这个方法
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         switch (resultCode) { // 根据状态码，处理返回结果

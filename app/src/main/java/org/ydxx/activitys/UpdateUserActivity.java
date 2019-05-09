@@ -74,6 +74,7 @@ public class UpdateUserActivity extends BaseActivity {
                 }
             }
         });
+        //设置用户默认信息
         et_update_age.setText(declare.getUser().getAge());
         et_update_user_name.setText(declare.getUser().getUsername());
         et_update_password.setText(declare.getUser().getPassword());

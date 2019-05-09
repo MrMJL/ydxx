@@ -26,6 +26,9 @@ import org.ydxx.entity.Jxzy;
 import org.ydxx.entity.ResultMessage;
 import org.ydxx.entity.Xsdy;
 
+/**
+ * 课程列表
+ */
 public class JxzyActivity extends BaseActivity {
     private static final String[] operationTypes = new String[] { "订阅" };
     private static final String[] operationTypes2 = new String[] { "修改", "删除" };
@@ -118,6 +121,7 @@ public class JxzyActivity extends BaseActivity {
             AlertDialog.Builder builder = new AlertDialog.Builder(JxzyActivity.this);
             builder.setTitle("选择操作");
             if (declare.getUser().getType().equals("3")) {
+                //学生
                 builder.setItems(operationTypes, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -160,7 +164,7 @@ public class JxzyActivity extends BaseActivity {
                                 break;
                             case 1:
                                 progressDialog =
-                                    ProgressDialog.show(JxzyActivity.this, "", "修改中.....", true);
+                                    ProgressDialog.show(JxzyActivity.this, "", "删除中.....", true);
                                 progressDialog.setCancelable(true);
                                 new Thread(new deleteJxzyRunable(jxzy)).start();
                                 break;

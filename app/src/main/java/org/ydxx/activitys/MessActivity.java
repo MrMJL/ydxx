@@ -24,6 +24,9 @@ import org.ydxx.entity.Declare;
 import org.ydxx.entity.Mess;
 import org.ydxx.entity.ResultMessage;
 
+/**
+ * 在线交流
+ */
 public class MessActivity extends BaseActivity {
     private static final String[] operationTypes = new String[] { "回复" };
     private ImageView btn_mess_return, btn_mess_add;
