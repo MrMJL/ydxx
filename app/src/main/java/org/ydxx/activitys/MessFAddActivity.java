@@ -51,8 +51,10 @@ public class MessFAddActivity extends BaseActivity {
             } else {
                 if (isThree) {
                     tv_title.setText("我的留言");
+                    et_mess_fadd_fmess.setHint("添加留言");
                 } else {
                     tv_title.setText("添加课程");
+                    et_mess_fadd_fmess.setHint("添加课程");
                 }
             }
         }

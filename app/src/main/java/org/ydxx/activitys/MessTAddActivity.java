@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 import org.ydxx.R;
 import org.ydxx.controller.LocalDataSource;
@@ -17,7 +18,8 @@ import org.ydxx.entity.Mess;
 import org.ydxx.entity.ResultMessage;
 
 public class MessTAddActivity extends BaseActivity {
-    private Button btn_mess_tadd_return, btn_mess_tadd_save;
+    private ImageView btn_mess_tadd_return;
+    private Button  btn_mess_tadd_save;
 
     private EditText et_mess_tadd_tmess;
     private ProgressDialog progressDialog = null;
@@ -36,7 +38,7 @@ public class MessTAddActivity extends BaseActivity {
 
         et_mess_tadd_tmess = (EditText) findViewById(R.id.et_mess_tadd_tmess);
 
-        btn_mess_tadd_return = (Button) findViewById(R.id.btn_mess_tadd_return);
+        btn_mess_tadd_return = (ImageView) findViewById(R.id.btn_mess_tadd_return);
         btn_mess_tadd_return.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,6 +81,13 @@ public class MessTAddActivity extends BaseActivity {
                 }
             }
         };
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(MessTAddActivity.this, MainActivity.class);
+        startActivity(intent);
+        MessTAddActivity.this.finish();
     }
 
     @Override

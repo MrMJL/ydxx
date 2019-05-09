@@ -2,23 +2,23 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:layout_gravity="top"
-    android:background="@drawable/background"
+    android:background="@color/white"
     android:orientation="vertical" >
 
    <RelativeLayout
         android:id="@+id/LinearLayout12"
         android:layout_width="fill_parent"
         android:layout_height="45dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginRight="1dp"
         android:layout_marginBottom="2dp"
-        android:background="@drawable/background_div" >
+        android:background="@color/blue_1" >
 
-        <Button
+        <ImageView
             android:id="@+id/btn_mess_tadd_return"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/lbl_return" />
+            android:src="@mipmap/icon_back"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="18dp" />
 
         <TextView
             android:id="@+id/tv_mess_tadd_title"
@@ -26,6 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
+            android:textColor="@color/white"
             android:text="我的回复"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -34,24 +35,36 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background_div"
+        android:layout_margin="30dp"
         android:orientation="vertical" >
 
         <EditText
             android:id="@+id/et_mess_tadd_tmess"
             android:layout_width="match_parent"
+            android:background="@drawable/back_blue_bottom_line"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:drawablePadding="13dp"
+            android:paddingBottom="12dp"
             android:ems="10"
-            android:hint="我的回复"
-            android:inputType="textMultiLine" >
-
-            <requestFocus />
+            android:hint="回复内容"
+            android:paddingLeft="10dp"
+            android:paddingTop="12dp"
+            android:paddingRight="10dp"
+            android:inputType="textMultiLine"
+            android:textSize="18sp" >
+        <requestFocus />
         </EditText>
+
 
         <Button
             android:id="@+id/btn_mess_tadd_save"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/btn_bac_login_selector"
+            android:layout_marginRight="10dp"
             android:text="保存" />
 
     </LinearLayout>
