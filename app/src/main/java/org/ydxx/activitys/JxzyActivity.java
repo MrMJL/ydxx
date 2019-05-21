@@ -18,6 +18,8 @@ import android.widget.ListView;
 import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.json.JSONObject;
 import org.ydxx.R;
 import org.ydxx.adapters.JxzyItemAdapter;
 import org.ydxx.controller.LocalDataSource;
@@ -25,6 +27,11 @@ import org.ydxx.entity.Declare;
 import org.ydxx.entity.Jxzy;
 import org.ydxx.entity.ResultMessage;
 import org.ydxx.entity.Xsdy;
+import org.ydxx.net.MainService;
+import org.ydxx.net.RetrofitClient;
+
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 
 /**
  * 课程列表
@@ -228,6 +235,24 @@ public class JxzyActivity extends BaseActivity {
             Message message = new Message();
             ResultMessage resultMessage = new ResultMessage();
             message.what = 4;
+//            RetrofitClient.getInstance().create(MainService.class)
+//                    .delData(type, json)
+//                    .subscribeOn(Schedulers.io())
+//                    .observeOn(AndroidSchedulers.mainThread())
+//                    .doOnSubscribe(disposable -> {
+//                    })
+//                    .subscribe(response -> {
+//                        Log.e("kin", "delData: " + response.toString());
+//                        JSONObject jsonObject = new JSONObject(String.valueOf(response));
+//                        if (jsonObject.getInt("status") == 1) {
+//
+//                        }else {
+//
+//                        }
+//                    }, throwable -> {
+//                        Log.e("kin", "delData: " + throwable.getMessage());
+//                    });
+//        }
             LocalDataSource.getInstance(JxzyActivity.this).getJxzyDao().deleteJxzy(jxzy);
             resultMessage.setStatus(true);
             resultMessage.setMessage("删除成功！");
@@ -248,6 +273,23 @@ public class JxzyActivity extends BaseActivity {
             Message message = new Message();
             ResultMessage resultMessage = new ResultMessage();
             message.what = 2;
+//            RetrofitClient.getInstance().create(MainService.class)
+//                    .addData(type, json)
+//                    .subscribeOn(Schedulers.io())
+//                    .observeOn(AndroidSchedulers.mainThread())
+//                    .doOnSubscribe(disposable -> {
+//                    })
+//                    .subscribe(response -> {
+//                        Log.e("kin", "addData: " + response.toString());
+//                        JSONObject jsonObject = new JSONObject(String.valueOf(response));
+//                        if (jsonObject.getInt("status") == 1) {
+//
+//                        }else {
+//
+//                        }
+//                    }, throwable -> {
+//                        Log.e("kin", "addData: " + throwable.getMessage());
+//                    });
             LocalDataSource.getInstance(JxzyActivity.this).getXsdyDao().insertXsdy(xsdy);
             resultMessage.setMessage("订阅成功！");
             resultMessage.setStatus(true);

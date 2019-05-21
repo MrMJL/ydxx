@@ -1,16 +1,26 @@
 package org.ydxx.entity;
 
+import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.util.Log;
+
+import com.cosima.base.xy.utils.Utils;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import org.ydxx.R;
 import org.ydxx.activitys.JxzyActivity;
 import org.ydxx.controller.LocalDataSource;
 import org.ydxx.net.Business;
+import org.ydxx.net.MainService;
+import org.ydxx.net.RetrofitClient;
+
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 
 public class Declare extends Application {
     private Business business;
@@ -33,7 +43,7 @@ public class Declare extends Application {
         // TODO Auto-generated method stub
         super.onCreate();
         business = new Business();
-
+        Utils.init(this);
         SharedPreferences preferences = getSharedPreferences("TAG", MODE_PRIVATE);
         boolean isFirst = preferences.getBoolean("isFirst", true);
         if (isFirst) {
@@ -56,6 +66,7 @@ public class Declare extends Application {
             items.add(jxzy);
             items.add(jxzy1);
             items.add(jxzy2);
+
 
             LocalDataSource.getInstance(this).getJxzyDao().insertJxzies(items);
 

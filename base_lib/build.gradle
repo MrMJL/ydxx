@@ -1,0 +1,52 @@
+apply plugin: 'com.android.library'
+
+android {
+  compileSdkVersion rootProject.ext.compileSdkVersion
+  buildToolsVersion rootProject.ext.buildToolsVersion
+  defaultConfig {
+    minSdkVersion rootProject.ext.minSdkVersion
+    targetSdkVersion rootProject.ext.targetSdkVersion
+    versionCode rootProject.ext.versionCode
+    versionName rootProject.ext.versionName
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    multiDexEnabled true
+  }
+
+  compileOptions {
+    targetCompatibility JavaVersion.VERSION_1_8
+    sourceCompatibility JavaVersion.VERSION_1_8
+  }
+}
+
+dependencies {
+  implementation fileTree(dir: 'libs', include: ['*.jar'])
+  api rootProject.ext.dependencies["appcompat-v7"]
+  api rootProject.ext.dependencies["constraint-layout"]
+  api rootProject.ext.dependencies["junit"]
+  api rootProject.ext.dependencies["runner"]
+  api rootProject.ext.dependencies["espresso-core"]
+  api rootProject.ext.dependencies["rxjava"]
+  api rootProject.ext.dependencies["rxandroid"]
+  api rootProject.ext.dependencies["rxlifecycle"]
+  api rootProject.ext.dependencies["rxlifecycle-components"]
+  api rootProject.ext.dependencies["glide"]
+  api rootProject.ext.dependencies["logger"]
+  api rootProject.ext.dependencies["timber"]
+  api rootProject.ext.dependencies["qmui"]
+  api rootProject.ext.dependencies["rxpermissions"]
+  api rootProject.ext.dependencies["smartRefreshLayout"]
+  api rootProject.ext.dependencies["SmartRefreshHeader"]
+  api rootProject.ext.dependencies["location"]
+  api rootProject.ext.dependencies["okhttp"]
+  api rootProject.ext.dependencies["retrofit"]
+  api rootProject.ext.dependencies["converter-gson"]
+  api rootProject.ext.dependencies["adapter-rxjava"]
+  api rootProject.ext.dependencies["butterknife"]
+  api rootProject.ext.dependencies["zxing"]
+  api rootProject.ext.dependencies["javase"]
+  api rootProject.ext.dependencies["multidex"]
+  api rootProject.ext.dependencies["logging"]
+  api rootProject.ext.dependencies["eventbus"]
+  implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+}

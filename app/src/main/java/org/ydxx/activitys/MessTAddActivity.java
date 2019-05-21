@@ -5,17 +5,25 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import org.json.JSONObject;
 import org.ydxx.R;
 import org.ydxx.controller.LocalDataSource;
 import org.ydxx.entity.Declare;
 import org.ydxx.entity.Mess;
 import org.ydxx.entity.ResultMessage;
+import org.ydxx.net.MainService;
+import org.ydxx.net.RetrofitClient;
+
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 
 public class MessTAddActivity extends BaseActivity {
     private ImageView btn_mess_tadd_return;
@@ -108,6 +116,23 @@ public class MessTAddActivity extends BaseActivity {
             Message message = new Message();
             ResultMessage resultMessage = new ResultMessage();
             message.what = 1;
+//            RetrofitClient.getInstance().create(MainService.class)
+//                    .updateData(type, json)
+//                    .subscribeOn(Schedulers.io())
+//                    .observeOn(AndroidSchedulers.mainThread())
+//                    .doOnSubscribe(disposable -> {
+//                    })
+//                    .subscribe(response -> {
+//                        Log.e("kin", "updateData: " + response.toString());
+//                        JSONObject jsonObject = new JSONObject(String.valueOf(response));
+//                        if (jsonObject.getInt("status") == 1) {
+//
+//                        }else {
+//
+//                        }
+//                    }, throwable -> {
+//                        Log.e("kin", "updateData: " + throwable.getMessage());
+//                    });
             LocalDataSource.getInstance(MessTAddActivity.this).getMessDao().updateUser(mess);
             resultMessage.setMessage("回复成功！");
             resultMessage.setStatus(true);
