@@ -92,130 +92,33 @@ public class MainActivity extends BaseActivity {
             public void onItemClick(AdapterView<?> arg0, View view, int index, long arg3) {
 
                 if (meumList.get(index).get("ItemText").toString().equals("课程列表")) {
-                    Gson gson = new Gson();
-                    Map<String, String> data = new HashMap<>();
-                    //jxzy
-                    data.put("kcmc", "高数 No.2");
-                    data.put("lsxm", "明明 No.2");
-                    data.put("ext1", "https://www.imooc.com/video/16896");
-                    data.put("lsid", "高数 No.2");
-                    data.put("ext2", "高数 No.2");
-                    data.put("ext3", "https://www.imooc.com/video/16896");
-
-                    //xsdy
-//                    data.put("jxzyid", "高数 No.2");
-//                    data.put("jxzymc", "明明 No.2");
-//                    data.put("xsid", "明明 No.2");
-//                    data.put("xsmc", "高数 No.2");
-//                    data.put("ext1", "https://www.imooc.com/video/16896");
-//                    data.put("ext2", "高数 No.2");
-//                    data.put("ext3", "https://www.imooc.com/video/16896");
-
-                    //mess
-//                    data.put("fuserid", "高数 No.2");
-//                    data.put("fusername", "明明 No.2");
-//                    data.put("fmessage", "明明 No.2");
-//                    data.put("tuserid", "高数 No.2");
-//                    data.put("tusername", "高数 No.2");
-//                    data.put("tmessage", "高数 No.2");
-//                    data.put("ext1", "https://www.imooc.com/video/16896");
-//                    data.put("ext2", "高数 No.2");
-//                    data.put("ext3", "https://www.imooc.com/video/16896");
-
-                    //user
-//                    data.put("username", "高数 No.2");
-//                    data.put("sex", "明明 No.2");
-//                    data.put("age", "https://www.imooc.com/video/16896");
-//                    data.put("password", "高数 No.2");
-//                    data.put("email", "高数 No.2");
-//                    data.put("isenable", "https://www.imooc.com/video/16896");
-//                    data.put("type", "https://www.imooc.com/video/16896");
-//                    data.put("classid", "https://www.imooc.com/video/16896");
-//                    data.put("classname", "https://www.imooc.com/video/16896");
-
-                    String json = gson.toJson(data);
-
-                    Tools.addData("jxzy", json);
-                    return;
-//					Intent intent = new Intent(MainActivity.this, JxzyActivity.class);
-//					startActivity(intent);
-//					MainActivity.this.finish();
+					Intent intent = new Intent(MainActivity.this, JxzyActivity.class);
+					startActivity(intent);
+					MainActivity.this.finish();
                 }
 
                 if (meumList.get(index).get("ItemText").toString().equals("我的课程")) {
-                    Tools.getData("jxzy");
-                    return;
-//					if (declare.getUser().getType().equals("3")) {
-//						Intent intent = new Intent(MainActivity.this, XsdyActivity.class);
-//						startActivity(intent);
-//						MainActivity.this.finish();
-//					}else {
-//						Intent intent = new Intent(MainActivity.this, JxzyActivity.class);
-//						startActivity(intent);
-//						MainActivity.this.finish();
-//					}
+					if (declare.getUser().getType().equals("3")) {
+						Intent intent = new Intent(MainActivity.this, XsdyActivity.class);
+						startActivity(intent);
+						MainActivity.this.finish();
+					}else {
+						Intent intent = new Intent(MainActivity.this, JxzyActivity.class);
+						startActivity(intent);
+						MainActivity.this.finish();
+					}
                 }
 
                 if (meumList.get(index).get("ItemText").toString().equals("在线交流")) {
-                    Map<String, Object> data = new HashMap<>();
-                    //jxzy
-//                    data.put("id", "1");
-//                    data.put("kcmc", "高数 No.10");
-//                    data.put("lsxm", "明明 No.10");
-//                    data.put("ext1", "https://www.imooc.com/video/16896");
-//                    data.put("lsid", "高数 No.2");
-//                    data.put("ext2", "高数 No.2");
-//                    data.put("ext3", "https://www.imooc.com/video/16896");
-
-                    //xsdy
-                    data.put("id", "1");
-                    data.put("jxzyid", "高数 No.20");
-                    data.put("jxzymc", "明明 No.20");
-                    data.put("xsid", "明明 No.20");
-                    data.put("xsmc", "高数 No.20");
-                    data.put("ext1", "https://www.imooc.com/video/16896");
-                    data.put("ext2", "高数 No.20");
-                    data.put("ext3", "https://www.imooc.com/video/16896");
-
-                    //mess
-//                    data.put("fuserid", "高数 No.20");
-//                    data.put("fusername", "明明 No.20");
-//                    data.put("fmessage", "明明 No.20");
-//                    data.put("tuserid", "高数 No.20");
-//                    data.put("tusername", "高数 No.20");
-//                    data.put("tmessage", "高数 No.20");
-//                    data.put("ext1", "https://www.imooc.com/video/16896");
-//                    data.put("ext2", "高数 No.20");
-//                    data.put("ext3", "https://www.imooc.com/video/16896");
-
-                    //user
-//                    data.put("username", "高数 No.2");
-//                    data.put("sex", "明明 No.2");
-//                    data.put("age", "https://www.imooc.com/video/16896");
-//                    data.put("password", "高数 No.2");
-//                    data.put("email", "高数 No.2");
-//                    data.put("isenable", "https://www.imooc.com/video/16896");
-//                    data.put("type", "https://www.imooc.com/video/16896");
-//                    data.put("classid", "https://www.imooc.com/video/16896");
-//                    data.put("classname", "https://www.imooc.com/video/16896");
-
-                    String json = gson.toJson(data);
-                    Tools.updateData("xsdy", json);
-                    return;
-//					Intent intent = new Intent(MainActivity.this, MessActivity.class);
-//					startActivity(intent);
-//					MainActivity.this.finish();
+					Intent intent = new Intent(MainActivity.this, MessActivity.class);
+					startActivity(intent);
+					MainActivity.this.finish();
                 }
 
                 if (meumList.get(index).get("ItemText").toString().equals("我的信息")) {
-                    Map<String, String> data = new HashMap<>();
-                    data.put("id", "1");
-                    String json = gson.toJson(data);
-                    Tools.delData("xsdy", json);
-                    return;
-//					Intent intent = new Intent(MainActivity.this, UpdateUserActivity.class);
-//					startActivity(intent);
-//					MainActivity.this.finish();
+					Intent intent = new Intent(MainActivity.this, UpdateUserActivity.class);
+					startActivity(intent);
+					MainActivity.this.finish();
                 }
 
                 if (meumList.get(index).get("ItemText").toString().equals("退出")) {

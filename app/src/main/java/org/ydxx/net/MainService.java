@@ -1,11 +1,16 @@
 package org.ydxx.net;
 
+import org.ydxx.entity.Jxzy;
 import org.ydxx.entity.JxzyBean;
+import org.ydxx.entity.Mess;
+import org.ydxx.entity.User;
+
+import java.util.List;
 
 import io.reactivex.Observable;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
-import retrofit2.http.Headers;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface MainService {
@@ -37,4 +42,13 @@ public interface MainService {
             @Field("table_name") String tableName,
             @Field("data") String object
     );
+
+    @GET("mock/62843/safePhone/zuzhang/list")
+    Observable<List<Jxzy>> getJxzy();
+
+    @GET("mock/62843/safePhone/zuzhang/list2")
+    Observable<List<User>> getUser();
+
+    @GET("mock/62843/safePhone/zuzhang/list3")
+    Observable<List<Mess>> getMess();
 }

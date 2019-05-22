@@ -100,4 +100,20 @@ public class Mess implements java.io.Serializable {
 		this.ext3 = ext3;
 	}
 
+
+	@Override
+	public String toString() {
+		return "Mess{" +
+				"id=" + id +
+				", fuserid='" + fuserid + '\'' +
+				", fusername='" + fusername + '\'' +
+				", fmessage='" + fmessage + '\'' +
+				", tuserid='" + tuserid + '\'' +
+				", tusername='" + tusername + '\'' +
+				", tmessage='" + tmessage + '\'' +
+				", ext1='" + ext1 + '\'' +
+				", ext2='" + ext2 + '\'' +
+				", ext3='" + ext3 + '\'' +
+				'}';
+	}
 }

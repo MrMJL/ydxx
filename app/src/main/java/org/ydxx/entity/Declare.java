@@ -12,6 +12,7 @@ import com.cosima.base.xy.utils.Utils;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.json.JSONObject;
 import org.ydxx.R;
 import org.ydxx.activitys.JxzyActivity;
 import org.ydxx.controller.LocalDataSource;
@@ -47,69 +48,70 @@ public class Declare extends Application {
         SharedPreferences preferences = getSharedPreferences("TAG", MODE_PRIVATE);
         boolean isFirst = preferences.getBoolean("isFirst", true);
         if (isFirst) {
-            List<Jxzy> items = new ArrayList<>();
-            Jxzy jxzy = new Jxzy();
-            jxzy.setKcmc("高数 No.1");
-            jxzy.setExt1("http://www.w3school.com.cn/");
-            jxzy.setLsxm("明明 No.1");
-
-            Jxzy jxzy1 = new Jxzy();
-            jxzy1.setKcmc("高数 No.2");
-            jxzy1.setLsxm("明明 No.2");
-            jxzy1.setExt1("https://www.imooc.com/video/16896");
-
-            Jxzy jxzy2 = new Jxzy();
-            jxzy2.setKcmc("高数 No.3");
-            jxzy2.setLsxm("明明 No.3");
-            jxzy2.setExt1("https://www.imooc.com/video/17196");
-
-            items.add(jxzy);
-            items.add(jxzy1);
-            items.add(jxzy2);
-
-
-            LocalDataSource.getInstance(this).getJxzyDao().insertJxzies(items);
-
-            List<Mess> data = new ArrayList<>();
-            Mess mess = new Mess();
-            mess.setFusername("明明 No.1");
-            mess.setFmessage("毕业设计好过吗？");
-            mess.setTusername("聪聪 No.1");
-            mess.setTmessage("不好过。");
-            Mess mess1 = new Mess();
-            mess.setFusername("明明 No.2");
-            mess.setFmessage("真的不好过吗？");
-            mess.setTusername("聪聪 No.2");
-            mess.setTmessage("是真的！");
-            data.add(mess);
-            data.add(mess1);
-            LocalDataSource.getInstance(this).getMessDao().insertMesses(data);
-
-            List<User> users = new ArrayList<>();
-            User user = new User();
-            user.setUsername("111");
-            user.setAge("111");
-            user.setPassword("111");
-            user.setEmail("111");
-            user.setSex("1");
-            user.setType("4");
-
-            User user2 = new User();
-            user2.setUsername("222");
-            user2.setAge("222");
-            user2.setPassword("222");
-            user2.setEmail("222");
-            user2.setSex("2");
-            user2.setType("3");
-
-            users.add(user);
-            users.add(user2);
-            LocalDataSource.getInstance(this).getUserDao().insertUsers(users);
+            getJxzy();
+            getMess();
+            getOnlineUser();
         }
         SharedPreferences.Editor edit = preferences.edit();
         edit.putBoolean("TAG", false);
         edit.apply();
         //initImageLoader(getApplicationContext());
+    }
+
+    @SuppressLint("CheckResult")
+    public void getJxzy() {
+        RetrofitClient.getInstance().create(MainService.class)
+                .getJxzy()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .doOnSubscribe(disposable -> {
+                })
+                .subscribe(response -> {
+                    for (int i = 0; i < response.size(); i++) {
+                        Log.e("kin", "delData: " + response.get(i).toString());
+                    }
+                    LocalDataSource.getInstance(this).getJxzyDao().insertJxzies(response);
+                }, throwable -> {
+                    Log.e("kin", "delData: " + throwable.getMessage());
+                });
+    }
+
+    @SuppressLint("CheckResult")
+    public void getMess() {
+        RetrofitClient.getInstance().create(MainService.class)
+                .getMess()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .doOnSubscribe(disposable -> {
+                })
+                .subscribe(response -> {
+                    for (int i = 0; i < response.size(); i++) {
+                        Log.e("kin", "delData: " + response.get(i).toString());
+                    }
+                    LocalDataSource.getInstance(this).getMessDao().insertMesses(response);
+
+                }, throwable -> {
+                    Log.e("kin", "delData: " + throwable.getMessage());
+                });
+    }
+
+    @SuppressLint("CheckResult")
+    public void getOnlineUser() {
+        RetrofitClient.getInstance().create(MainService.class)
+                .getUser()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .doOnSubscribe(disposable -> {
+                })
+                .subscribe(response -> {
+                    for (int i = 0; i < response.size(); i++) {
+                        Log.e("kin", "delData: " + response.get(i).toString());
+                    }
+                    LocalDataSource.getInstance(this).getUserDao().insertUsers(response);
+
+                }, throwable -> {
+                    Log.e("kin", "delData: " + throwable.getMessage());
+                });
     }
 
     //public static void initImageLoader(Context context) {

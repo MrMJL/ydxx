@@ -80,4 +80,18 @@ public class Xsdy implements java.io.Serializable {
     public void setExt3(String ext3) {
         this.ext3 = ext3;
     }
+
+    @Override
+    public String toString() {
+        return "Xsdy{" +
+                "id=" + id +
+                ", jxzyid='" + jxzyid + '\'' +
+                ", jxzymc='" + jxzymc + '\'' +
+                ", xsid='" + xsid + '\'' +
+                ", xsmc='" + xsmc + '\'' +
+                ", ext1='" + ext1 + '\'' +
+                ", ext2='" + ext2 + '\'' +
+                ", ext3='" + ext3 + '\'' +
+                '}';
+    }
 }

@@ -20,25 +20,109 @@ import io.reactivex.schedulers.Schedulers;
 public class Tools {
 
 
+    /*
+                    Gson gson = new Gson();
+                    Map<String, String> data = new HashMap<>();
+                    //jxzy
+                    data.put("kcmc", "高数 No.2");
+                    data.put("lsxm", "明明 No.2");
+                    data.put("ext1", "https://www.imooc.com/video/16896");
+                    data.put("lsid", "高数 No.2");
+                    data.put("ext2", "高数 No.2");
+                    data.put("ext3", "https://www.imooc.com/video/16896");
+
+                    //xsdy
+                    data.put("jxzyid", "高数 No.2");
+                    data.put("jxzymc", "明明 No.2");
+                    data.put("xsid", "明明 No.2");
+                    data.put("xsmc", "高数 No.2");
+                    data.put("ext1", "https://www.imooc.com/video/16896");
+                    data.put("ext2", "高数 No.2");
+                    data.put("ext3", "https://www.imooc.com/video/16896");
+
+                    //mess
+                    data.put("fuserid", "高数 No.2");
+                    data.put("fusername", "明明 No.2");
+                    data.put("fmessage", "明明 No.2");
+                    data.put("tuserid", "高数 No.2");
+                    data.put("tusername", "高数 No.2");
+                    data.put("tmessage", "高数 No.2");
+                    data.put("ext1", "https://www.imooc.com/video/16896");
+                    data.put("ext2", "高数 No.2");
+                    data.put("ext3", "https://www.imooc.com/video/16896");
+
+                    //user
+                    data.put("username", "高数 No.2");
+                    data.put("sex", "明明 No.2");
+                    data.put("age", "https://www.imooc.com/video/16896");
+                    data.put("password", "高数 No.2");
+                    data.put("email", "高数 No.2");
+                    data.put("isenable", "https://www.imooc.com/video/16896");
+                    data.put("type", "https://www.imooc.com/video/16896");
+                    data.put("classid", "https://www.imooc.com/video/16896");
+                    data.put("classname", "https://www.imooc.com/video/16896");
+
+                    String json = gson.toJson(data);
+
+                    Tools.addData("jxzy", json);
+
+
+
+
+                    Map<String, Object> data = new HashMap<>();
+                    //jxzy
+                    data.put("id", "1");
+                    data.put("kcmc", "高数 No.10");
+                    data.put("lsxm", "明明 No.10");
+                    data.put("ext1", "https://www.imooc.com/video/16896");
+                    data.put("lsid", "高数 No.2");
+                    data.put("ext2", "高数 No.2");
+                    data.put("ext3", "https://www.imooc.com/video/16896");
+
+                    //xsdy
+                    data.put("id", "1");
+                    data.put("jxzyid", "高数 No.20");
+                    data.put("jxzymc", "明明 No.20");
+                    data.put("xsid", "明明 No.20");
+                    data.put("xsmc", "高数 No.20");
+                    data.put("ext1", "https://www.imooc.com/video/16896");
+                    data.put("ext2", "高数 No.20");
+                    data.put("ext3", "https://www.imooc.com/video/16896");
+
+                    //mess
+                    data.put("fuserid", "高数 No.20");
+                    data.put("fusername", "明明 No.20");
+                    data.put("fmessage", "明明 No.20");
+                    data.put("tuserid", "高数 No.20");
+                    data.put("tusername", "高数 No.20");
+                    data.put("tmessage", "高数 No.20");
+                    data.put("ext1", "https://www.imooc.com/video/16896");
+                    data.put("ext2", "高数 No.20");
+                    data.put("ext3", "https://www.imooc.com/video/16896");
+
+                    //user
+                    data.put("username", "高数 No.2");
+                    data.put("sex", "明明 No.2");
+                    data.put("age", "https://www.imooc.com/video/16896");
+                    data.put("password", "高数 No.2");
+                    data.put("email", "高数 No.2");
+                    data.put("isenable", "https://www.imooc.com/video/16896");
+                    data.put("type", "https://www.imooc.com/video/16896");
+                    data.put("classid", "https://www.imooc.com/video/16896");
+                    data.put("classname", "https://www.imooc.com/video/16896");
+
+                    String json = gson.toJson(data);
+                    Tools.updateData("xsdy", json);
+
+                    Map<String, String> data = new HashMap<>();
+                    data.put("id", "1");
+                    String json = gson.toJson(data);
+                    Tools.delData("xsdy", json);
+     */
+
+
     @SuppressLint("CheckResult")
     public static void addData(String type, String json) {
-
-
-//        private String jxzyid;
-//        private String jxzymc;
-//        private String xsid;
-//        private String xsmc;
-//        private String ext1;
-//        private String ext2;
-//        private String ext3;
-
-//        data.put("jxzyid", "高数 No.2");
-//        data.put("jxzymc", "明明 No.2");
-//        data.put("xsid", "明明 No.2");
-//        data.put("xsmc", "高数 No.2");
-//        data.put("ext1", "https://www.imooc.com/video/16896");
-//        data.put("ext2", "高数 No.2");
-//        data.put("ext3", "https://www.imooc.com/video/16896");
         RetrofitClient.getInstance().create(MainService.class)
                 .addData(type, json)
                 .subscribeOn(Schedulers.io())

@@ -29,7 +29,8 @@ public class RetrofitClient {
     private static final int CACHE_TIMEOUT = 10 * 1024 * 1024;
 
     //服务端根路径
-    public static String baseUrl = "http://192.168.0.123:8000/";
+//    public static String baseUrl = "http://192.168.0.123:8000/";
+    public static String baseUrl = "http://yapi.demo.qunar.com/";
 
     private static Context mContext = Utils.getContext();
 

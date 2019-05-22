@@ -112,4 +112,21 @@ public class User {
     public void setClassname(String classname) {
         this.classname = classname;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", sex='" + sex + '\'' +
+                ", age='" + age + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", isenable='" + isenable + '\'' +
+                ", createtime=" + createtime +
+                ", type='" + type + '\'' +
+                ", classid='" + classid + '\'' +
+                ", classname='" + classname + '\'' +
+                '}';
+    }
 }
